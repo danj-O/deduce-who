@@ -1,17 +1,17 @@
-const cardsArr = [];
+import cardsArr from "./cardNames.js"
+
+console.log(cardsArr)
+// const cardsArr = [];
 const cardContainer = document.querySelector('#cards-container');
 const cardChoiceContainer = document.querySelector('#card-choice-container')
 let isChosen = false;
 let chosenCard;
 
-//fetch the json file
-fetch('/cardNames.json')
-  .then(resp => resp.json())
-  .then(data => {
-    data.cards.forEach(card => {
+
+    cardsArr.cards.forEach(card => {
       // console.log(card)
       //push each object into the array
-      cardsArr.push(card)
+      // cardsArr.push(card)
       const charCard = document.createElement("div");
       charCard.classList.add("card")
       charCard.id = `${card.name}`
@@ -33,7 +33,6 @@ fetch('/cardNames.json')
       cardContainer.appendChild(charCard)
 
     });
-  })
 
   const isChosenFunc = (e) => {
     let chosenCardElement;
@@ -42,7 +41,7 @@ fetch('/cardNames.json')
 
     console.log(cardsArr)
     //loop over cardsArr
-    cardsArr.forEach(card => {
+    cardsArr.cards.forEach(card => {
       //find the index of matching object
       if(card.name == chosenCard){
         chosenCardElement = `
