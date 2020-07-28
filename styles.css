@@ -1,0 +1,30 @@
+#cards-container {
+  display: grid;
+  width: 100vw;
+  grid-template-columns: repeat(4, 120px);
+}
+
+.card {
+  border: solid black 1px;
+  /* width: 100px; */
+  /* height: auto; */
+  overflow: hidden;
+}
+
+/* .card button {
+  width: 100%;
+  height: 100%;
+} */
+
+.card h2 {
+
+}
+.card img {
+  height: 100px;
+  width: auto;
+}
+
+.hidden {
+  background-color: red;
+  /* filter: invert(100%); */
+}
